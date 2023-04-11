@@ -1,0 +1,42 @@
+{
+    "import_config": {
+        "classifiers":       {"type": "csv", "params": {"path": "classifiers.csv"}},
+        "disturbance_types": {"type": "csv", "params": {"path": "disturbance_types.csv"}},
+        "age_classes":       {"type": "csv", "params": {"path": "age_classes.csv"}},
+        "inventory":         {"type": "csv", "params": {"path": "inventory.csv"}},
+        "yield":             {"type": "csv", "params": {"path": "growth.csv"}},
+        "events":            {"type": "csv", "params": {"path": "disturbance_events.csv"}},
+        "transitions":       {"type": "csv", "params": {"path": "transitions.csv"}}
+    },
+    "mapping_config": {
+        "nonforest": null,
+        "species": {
+            "species_classifier": "Species",
+            "species_mapping": [
+                {"user_species": "Mixedwood",
+                 "default_species": "Mixedwood"},
+                {"user_species": "Sitka spruce",
+                 "default_species": "Sitka spruce"},
+                {"user_species": "Sycamore",
+                 "default_species": "Sycamore"}
+            ]
+        },
+        "spatial_units": {
+            "mapping_mode": "SingleDefaultSpatialUnit",
+            "admin_boundary": "British Columbia",
+            "eco_boundary": "Montane Cordillera"
+        },
+        "disturbance_types": [
+            
+            {
+                "user_dist_type": "Clearcut",
+                "default_dist_type": "Clear-cut with slash-burn"
+            },
+            
+            {
+                "user_dist_type": "Thinning",
+                "default_dist_type": "10% commercial thinning"
+            }
+        ]
+    }
+}
