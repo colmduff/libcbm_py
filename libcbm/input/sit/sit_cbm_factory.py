@@ -193,7 +193,7 @@ def get_merch_volumes(yield_table, classifiers, classifier_values, age_classes,
             merch_vols.append({
                 "species_id": match_row["leading_species"],
                 "age_volume_pairs": [
-                    (ages[i], vols[i]) for i in range(len(vols))]
+                    (ages[i], vols.iloc[i]) for i in range(len(vols))]
             })
         output.append(
             cbm_config.merch_volume_curve(

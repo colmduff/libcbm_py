@@ -43,7 +43,11 @@ def unpack_column(table, column_description, table_name):
     col_name = column_description["name"]
     if "type" in column_description:
         try:
-            data.loc[data.notna()] = data.astype(column_description['type'])
+            if column_description['type'] == bool:
+                # Explicit conversion from string to boolean
+                data = data.map({'False': False, 'True': True})
+            else:
+                    data = data.astype(column_description['type'])
         except ValueError:
             raise ValueError(
                 f"{table_name} table, column: '{col_name}' contains values "
