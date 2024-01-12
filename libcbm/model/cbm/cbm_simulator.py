@@ -95,7 +95,7 @@ def create_in_memory_reporting_func(density=False, classifier_map=None,
         else:
             results.classifiers = data_helpers.append_simulation_result(
                 results.classifiers,
-                cbm_vars.classifiers.applymap(
+                cbm_vars.classifiers.map(
                     classifier_map.__getitem__),
                 timestep)
         results.area = data_helpers.append_simulation_result(
